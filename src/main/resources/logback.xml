@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<configuration>
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- See http://logback.qos.ch/manual/layouts.html -->
+            <pattern>%date{"yyyy-MM-dd'T'HH:mm:ss.SSSZ","UTC"} level=%level logger=%logger{15} %msg %mdc %n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.gettyimages.dsa" level="${DSA_LOGLEVEL:-debug}" additivity="true"/>
+    <logger name="akka" level="${AKKA_LOGLEVEL:-info}" additivity="true"/>
+    <logger name="com.gettyimages.dsa.rmq" level="warn" additivity="true"/>
+
+</configuration>
+
